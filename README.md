@@ -1,7 +1,3 @@
-Autor: igorRamonDev
-Github: github.com/igorramondev
-Linkedin: linkedin.com/igorramondev
-
 # Gerador de Senhas (Passtorage)
 
 O **Passtorage** é um gerador de senhas simples e personalizável que permite criar senhas seguras com base em diferentes critérios. Você pode especificar o comprimento da senha, incluir letras maiúsculas, caracteres especiais, números e até mesmo uma palavra personalizada.
