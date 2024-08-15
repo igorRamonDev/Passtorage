@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas</title>
+    <title>Passtorage</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Passtorage</h1>
+        <h3>Personalize sua senha</h3>
         <form id="passwordForm">
             <label for="length">Digite o número máximo de caracteres:</label>
-            <input type="number" id="length" name="length" min="1" max="128" required>
+            <input type="number" id="length" name="length" min="1" max="128">
 
-            <label for="word">Deseja incluir uma palavra?:</label>
-            <input type="text" id="word" name="word" min="1" max="128" required>
+            <label for="word">Deseja incluir uma palavra?</label>
+            <input type="text" id="word" name="word">
             
-            <label for="uppercase">Deseja incluir letras maiúsculas:</label>
+            <label for="uppercase">Deseja incluir letras maiúsculas?</label>
             <input type="checkbox" id="uppercase" name="uppercase">
             
-            <label for="special">Deseja incluir caracteres especiais:</label>
+            <label for="special">Deseja incluir caracteres especiais?</label>
             <input type="checkbox" id="special" name="special">
             
-            <label for="numbers">Deseja incluir números:</label>
+            <label for="numbers">Deseja incluir números?</label>
             <input type="checkbox" id="numbers" name="numbers">
             <br>
-            <button type="button" onclick="defaultPassword()">Gerar Senha</button>
+            <button type="button" onclick="defaultPassword()">Gerar</button>
+            <button type="button" id="toggleVisibility">Mostrar/Esconder</button>
+            <button type="button" id="clipboardCopy">Copiar</button>
         </form>
         <div id="passwordDisplay">
-            <h2>Senha Gerada:</h2>
-            <p id="generatedPassword"></p>
+            <h3>Senha Gerada</h3>
+            <input type="text" id="generatedPassword" readonly>
         </div>
     </div>
     <script src="script.js"></script>

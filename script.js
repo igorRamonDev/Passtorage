@@ -1,16 +1,19 @@
 function generatePassword(length, charset, word) {
     let password = "";
 
-    if (word) {
+    if (word.length > length){
+        alert("Tamanho inválido")
+    } else {
         password += word;
-        length -= word.length; // Reduz o comprimento restante para a senha
+        length -= word.length
     }
+
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * charset.length);
         password += charset[randomIndex];
     }
 
-    document.getElementById("generatedPassword").textContent = password;
+    document.getElementById("generatedPassword").value = password; // Use value para campos de input
 }
 
 function defaultPassword() {
@@ -36,4 +39,24 @@ function defaultPassword() {
         const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
         generatePassword(length, lowercaseChars, word);
     }
+}
+
+//alternar visibilidade
+document.getElementById("toggleVisibility").addEventListener("click", function() {
+    const passwordField = document.getElementById("generatedPassword");
+    const button = this;
+    
+    if (passwordField.type === "text") {
+        passwordField.type = "password";
+        button.textContent = "Mostrar senha";
+    } else {
+        passwordField.type = "text";
+        button.textContent = "Esconder senha";
+    }
+});
+
+document.getElementById("clipboardCopy").addEventListener("click", execCopy);
+function execCopy (){
+    document.getElementById("generatedPassword").select();
+    document.execCommand("copy");
 }
